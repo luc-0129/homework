@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:text="计算BMI"
+        android:textColor="#9D7CDE"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="668dp"
+        android:text="杨慧婕 42311173"
+        android:textColor="#0F0D0D"
+        android:textColorLink="#3E90D1"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="12dp" />
+
+    <EditText
+        android:id="@+id/height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:hint="请输入身高(单位：米)"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-43dp" />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:hint="请输入体重(单位：千克)"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-26dp" />
+
+    <EditText
+        android:id="@+id/massage"
+        android:layout_width="354dp"
+        android:layout_height="181dp"
+        android:layout_marginTop="428dp"
+        android:hint="建议框"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/BMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
+        android:onClick="myclick"
+        android:text="计算BMI"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-6dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="label_text_1">Hello Word</string>
+    <string name="label_text_2">Hello Android</string>
+    <string name="label_text">Hello android</string>
+    <string name="label_btn">BUTTON</string>
+</resources>
