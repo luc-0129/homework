@@ -10,18 +10,19 @@
     tools:context=".MainActivity"
     tools:visibility="visible">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:text="计算BMI"
         android:textColor="#9D7CDE"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -33,45 +34,57 @@
         android:textColorLink="#3E90D1"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="12dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
-        android:hint="请输入身高(单位：米)"
+        android:minHeight="48dp"
+        android:hint="@string/string_hint_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-43dp" />
+        app:layout_constraintVertical_bias="0.348" />
 
     <EditText
         android:id="@+id/weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:layout_marginTop="140dp"
-        android:hint="请输入体重(单位：千克)"
+        android:hint="@string/string_hint_weight"
+        app:layout_constraintBottom_toTopOf="@+id/height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-26dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/massage"
         android:layout_width="354dp"
         android:layout_height="181dp"
-        android:layout_marginTop="428dp"
-        android:hint="建议框"
+        android:hint="@string/string_hint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.822" />
 
     <Button
         android:id="@+id/BMI"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="324dp"
         android:onClick="myclick"
         android:text="计算BMI"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-6dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

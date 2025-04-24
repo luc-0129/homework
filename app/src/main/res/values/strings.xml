@@ -1,7 +1,25 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="label_text_1">Hello Word</string>
-    <string name="label_text_2">Hello Android</string>
-    <string name="label_text">Hello android</string>
+    <string name="string_hint_weight" translatable="false">请输入体重</string>
+    <string name="string_hint_height" translatable="false">请输入身高</string>
+    <string name="string_hint" translatable="false">建议框</string>
     <string name="label_btn">BUTTON</string>
+
+    <string name="team1_label" translatable="false">TeamA</string>
+    <string name="team2_label" translatable="false">TeamB</string>
+    <string name="team3_label" translatable="false">0</string>
+    <string name="button_1" translatable="false">FREE THROW</string>
+    <string name="button_2" translatable="false">+2  POINTS</string>
+    <string name="button_3" translatable="false">+3  POINT</string>
+    <string name="button_4" translatable="false">RESET</string>
+
+    <string name="text_label" translatable="false">Input RMB</string>
+    <string name="text_label_1" translatable="false">Hello</string>
+    <string name="btn_1" translatable="false">DOLLAR</string>
+    <string name="btn_2" translatable="false">EURO</string>
+    <string name="btn_3" translatable="false">WON</string>
+    <string name="btn_4" translatable="false">CONFIG</string>
+
+
 </resources>
