@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static java.lang.System.in;
+
 import android.annotation.SuppressLint;
 import android.app.DirectAction;
 import android.content.Intent;
@@ -35,6 +37,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.transform.Result;
 
@@ -47,10 +51,7 @@ public class MainActivity_ExchangeRate extends AppCompatActivity implements  Run
     private float dollarRate = 0.13f;
     private float euroRate = 0.12f;
     private float wonRate = 185.19f;
-
     Handler handler;
-
-
     @SuppressLint({"MissingInflatedId", "HandlerLeak"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +74,12 @@ public class MainActivity_ExchangeRate extends AppCompatActivity implements  Run
                 Log.i(TAG, "handleMessage:接收消息");
                 if (msg.what == 5) {
                     String str = (String) msg.obj;
-                    Log.i(TAG, "handleMessage: str=" + str);
+//                    Log.i(TAG, "handleMessage: str=" + str);
                     show.setText(str);
                 }
                 super.handleMessage(msg);
             }
         };
-
     }
 
     public void my_click(View btn) {
@@ -148,53 +148,52 @@ public class MainActivity_ExchangeRate extends AppCompatActivity implements  Run
         Log.i(TAG, "run:run......");
 
         URL url = null;
-        StringBuilder html = new StringBuilder();
+        String html="";
+        Bundle retbundle=new Bundle();
         try {
-            url=new URL("https://chl.cn/huilv/?jinri");
-            HttpURLConnection http=(HttpURLConnection) url.openConnection();
-            InputStream in =http.getInputStream();
-
-            html= new StringBuilder(inputStream2String(in));
-            Log.i(TAG,"run:html="+html);
-//            Document doc = Jsoup.connect("https://chl.cn/huilv/?jinri").timeout(10000).get();
-//            Log.i(TAG, "run:title=" + doc.title());
-//            Elements tables = doc.getElementsByTag("table");
-//            if (tables.isEmpty()) {
-//                throw new IOException("No tables found on the page");
-//            }
-//            Element table = tables.get(0);
-//            Elements rows = table.getElementsByTag("tr");
-//            for (Element row : rows) {
-//                Elements tds = row.getElementsByTag("td");
-//                //Log.i(TAG,"run:row="+row);
-//                Element td1 = tds.first();
-//                Element td2 = tds.get(1);
-//                Log.i(TAG, "run:td1=" + td1.text() + "->" + td2.text());
-//                //Log.i(TAG,"run:td1="+td1.html()+"->"+td2.html());
+//            url=new URL("https://chl.cn/huilv/?jinri");
+//            HttpURLConnection http=(HttpURLConnection) url.openConnection();
+//            InputStream in =http.getInputStream();
 //
-//            }
+//            html=(inputStream2String(in));
+//            Log.i(TAG,"run:html="+html);
+            Document doc = Jsoup.connect("https://chl.cn/huilv/?jinri").get();
+//            Log.i(TAG, "run:title=" + doc.title());
+            Element table = doc.getElementsByTag("table").first();
+            Elements rows = table.getElementsByTag("tr");
+            rows.remove(0);
+            for (Element row : rows) {
+                Elements tds = row.getElementsByTag("td");
+                //Log.i(TAG,"run:row="+row);
+                Element td1 = tds.first();
+                Element td2 = tds.get(4);
+                Log.i(TAG, "run:td1=" + td1.text() + "->" + td2.text());
+                html+=(td1.text()+"=>"+td2.text()+"\n");
 
+            }
+            Element td=doc.select("#Lt > article > div.ahh > table:nth-child(3) > tbody > tr:nth-child(28) > td:nth-child(2)").first();
+            Log.i(TAG,"run:美元"+td.text());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Message msg = handler.obtainMessage(5, html.toString());
+        Message msg = handler.obtainMessage(5,html);
         handler.sendMessage(msg);
     }
 
-    private String inputStream2String(InputStream inputStream)
-            throws IOException {
-        final int bufferSize = 1024;
-        final char[] buffer = new char[bufferSize];
-        final StringBuilder out = new StringBuilder();
-        Reader in = new InputStreamReader(inputStream, "UTF-8");
-        while (true) {
-            int rsz = in.read(buffer, 0, buffer.length);
-            if (rsz < 0)
-                break;
-            out.append(buffer, 0, rsz);
-        }
-        return out.toString();
-    }
+//    private String inputStream2String(InputStream inputStream)
+//            throws IOException {
+//        final int bufferSize = 1024;
+//        final char[] buffer = new char[bufferSize];
+//        final StringBuilder out = new StringBuilder();
+//        Reader in = new InputStreamReader(inputStream, "UTF-8");
+//        while (true) {
+//            int rsz = in.read(buffer, 0, buffer.length);
+//            if (rsz < 0)
+//                break;
+//            out.append(buffer, 0, rsz);
+//        }
+//        return out.toString();
+//    }
 }
