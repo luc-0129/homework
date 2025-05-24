@@ -38,8 +38,10 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("org.jsoup:jsoup:1.19.1")
+    implementation ("commons-io:commons-io:2.11.0")
     implementation(libs.runner)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }
