@@ -2,21 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/constellationName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+    <!-- 星座图标 -->
+    <ImageView
+        android:id="@+id/constellationIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/constellation_icon" />
 
-    <TextView
-        android:id="@+id/constellationDate"
-        android:layout_width="wrap_content"
+    <!-- 星座名称和日期 -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#666"
-        android:layout_marginTop="4dp"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/constellationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/constellationDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
 </LinearLayout>
