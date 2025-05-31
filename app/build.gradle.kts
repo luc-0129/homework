@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+
+    // Add the Google services Gradle plugin
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -39,9 +42,26 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation("org.jsoup:jsoup:1.19.1")
     implementation ("commons-io:commons-io:2.11.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("com.google.firebase:firebase-database:20.0.4")
+    implementation ("com.google.firebase:firebase-auth:21.0.3")
     implementation(libs.runner)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
 
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "798220149736",
+    "project_id": "wish-be2a4",
+    "storage_bucket": "wish-be2a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798220149736:android:f49722eff0ea2d4727ba5d",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFDPxoerUN0E1KE8E0Kj4frNV59PBGvtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

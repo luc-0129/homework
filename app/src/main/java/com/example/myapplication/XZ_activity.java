@@ -7,9 +7,8 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.FirebaseApp;
 
 public class XZ_activity extends AppCompatActivity {
 
@@ -18,6 +17,9 @@ public class XZ_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_xz);
+
+        FirebaseApp.initializeApp(this);
+
         // 获取按钮并设置点击监听
         Button btnConstellationList = findViewById(R.id.chance_1);
         btnConstellationList.setOnClickListener(new View.OnClickListener() {
@@ -48,5 +50,6 @@ public class XZ_activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

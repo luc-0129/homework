@@ -1,21 +1,12 @@
 package com.example.myapplication;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -23,7 +14,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class ConstellationDetailActivity extends AppCompatActivity {
     private static final String TAG = "ConstellationDetail";
@@ -46,6 +36,18 @@ public class ConstellationDetailActivity extends AppCompatActivity {
 
         // 根据星座名称加载不同数据
         loadConstellationData(constellationName);
+
+        findViewById(R.id.view_wishes_btn).setOnClickListener(v -> {
+            Intent intent = new Intent(this, WishWallActivity.class);
+            intent.putExtra("constellation", getIntent().getStringExtra("constellationName"));
+            startActivity(intent);
+        });
+
+        findViewById(R.id.post_wish_btn).setOnClickListener(v -> {
+            Intent intent = new Intent(this, PostWishActivity.class);
+            intent.putExtra("constellation", getIntent().getStringExtra("constellationName"));
+            startActivity(intent);
+        });
     }
 
     private void loadConstellationData(String name) {
@@ -106,4 +108,5 @@ public class ConstellationDetailActivity extends AppCompatActivity {
         }
         return "暂无星座花语信息";
     }
+
 }
