@@ -46,6 +46,20 @@ dependencies {
     implementation ("com.google.android.material:material:1.9.0")
     implementation ("com.google.firebase:firebase-database:20.0.4")
     implementation ("com.google.firebase:firebase-auth:21.0.3")
+    // Retrofit for API calls
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    // OkHttp for networking
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+    // Lifecycle components for ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+
+    // Coroutines for asynchronous programming
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
     implementation(libs.runner)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

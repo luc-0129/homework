@@ -41,6 +41,47 @@
             android:textSize="16sp"
             android:lineSpacingMultiplier="1.2"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="星座问答"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入关于星座的问题..."
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnAsk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提问"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.2"
+            android:visibility="gone"/>
+
         <Button
             android:id="@+id/post_wish_btn"
             android:layout_width="wrap_content"
