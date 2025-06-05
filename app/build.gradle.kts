@@ -37,12 +37,12 @@ android {
 dependencies {
 
     implementation(libs.appcompat)
-    implementation(libs.material)
+    //implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("org.jsoup:jsoup:1.19.1")
     implementation ("commons-io:commons-io:2.11.0")
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    //implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation ("com.google.android.material:material:1.9.0")
     implementation ("com.google.firebase:firebase-database:20.0.4")
     implementation ("com.google.firebase:firebase-auth:21.0.3")
@@ -50,15 +50,15 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     // OkHttp for networking
-    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
+    //implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    //implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     // Lifecycle components for ViewModel
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+    //implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    //implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
 
     // Coroutines for asynchronous programming
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+    //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
 
     implementation(libs.runner)
     testImplementation(libs.junit)
@@ -72,7 +72,7 @@ dependencies {
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
-    implementation("com.google.firebase:firebase-analytics")
+    //implementation("com.google.firebase:firebase-analytics")
 
 
     // Add the dependencies for any other desired Firebase products

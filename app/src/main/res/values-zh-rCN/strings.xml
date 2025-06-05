@@ -2,6 +2,5 @@
 <resources>
     <string name="app_name">我的应用</string>
     <string name="label_text_1">你好安卓</string>
-    <string name="label_text">你好世界</string>
     <string name="label_btn">提交</string>
 </resources>
